@@ -1,0 +1,126 @@
+/* The HTML Link and icon - change it to suit your site. The &#x77; is divi message icon. Divi uses class et-pb-icon to display the icon */
+
+<a href="/get-in-touch" class="floating-message-icon">
+  <span class="et-pb-icon">&#x77;</span>
+  <span class="floating-tooltip">Tell us about your project</span>
+</a>
+
+/* Floating Message Icon - change the background colour to suit your project */
+
+<style>
+.floating-message-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #d33d0d;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+/* Icon Font Size and loading effect */
+
+.floating-message-icon .et-pb-icon {
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+/* Only apply hover effects on wider screens (desktop) - changes colour and grows the icon */
+
+@media (min-width: 768px) {
+  .floating-message-icon:hover {
+    background: #ff4500;
+    transform: translateY(0) scale(1.1);
+  }
+
+  .floating-message-icon:hover .et-pb-icon {
+    transform: scale(1.2);
+  }
+}
+
+/* Tooltip styling - the pop out message */
+
+.floating-tooltip {
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translateY(-50%);
+  background: #ff4500;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+/* Tooltip arrow */
+
+.floating-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #ff4500;
+}
+
+
+/* Show tooltip on hover */
+
+.floating-message-icon:hover .floating-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-10px);
+}
+
+/* Fade-in keyframes */
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide tooltip on mobile - tooltips are a bit clunky on touch screens*/
+
+@media (max-width: 767px) {
+  .floating-tooltip {
+    display: none !important;
+  }
+}
+
+/* Hides the button on our get-in-touch page using the pages body class. 
+
+Go to the page you want to hide the icon, view source and find the page body class. You will see the class page-id-xx
+
+Simple change the below page-id-20 to your own page ID
+
+ */
+
+body.page-id-20 .floating-message-icon {
+  display: none !important;
+}
+</style>
