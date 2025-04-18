@@ -1,4 +1,8 @@
-/* The HTML Link and icon - change it to suit your site. The &#x77; is divi message icon. Divi uses class et-pb-icon to display the icon */
+/* The HTML link and icon - change it to suit your site. 
+
+The &#x77; is divi message icon. 
+
+Divi uses class et-pb-icon to display the icon */
 
 <a href="/get-in-touch" class="floating-message-icon">
   <span class="et-pb-icon">&#x77;</span>
@@ -39,7 +43,9 @@
   transition: transform 0.3s ease;
 }
 
-/* Only apply hover effects on wider screens (desktop) - changes colour and grows the icon */
+/* Only apply hover effects on wider screens (desktop)
+
+Changes colour and grows the icon */
 
 @media (min-width: 768px) {
   .floating-message-icon:hover {
@@ -104,7 +110,7 @@
   }
 }
 
-/* Hide tooltip on mobile - tooltips are a bit clunky on touch screens*/
+/* Hide tooltip on mobile - tooltips are a bit clunky on touch screens */
 
 @media (max-width: 767px) {
   .floating-tooltip {
@@ -114,11 +120,11 @@
 
 /* Hides the button on our get-in-touch page using the pages body class. 
 
-Go to the page you want to hide the icon, view source and find the page body class. You will see the class page-id-xx
+Go to the page you want to hide the icon, view source and find the page body class. 
 
-Simple change the below page-id-20 to your own page ID
+You will see the class page-id-xx
 
- */
+Simple change the below page-id-20 to your own page ID  */
 
 body.page-id-20 .floating-message-icon {
   display: none !important;
